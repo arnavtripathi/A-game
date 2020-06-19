@@ -16,7 +16,7 @@ head.shape("square")
 head.color("black")
 head.penup()
 head.goto(0,0)
-head.direction = "stop"
+head.direction = "up"
 
 #Functions
 def move():
