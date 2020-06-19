@@ -1,7 +1,7 @@
 import turtle
 import time
 
-delay = 1
+delay = 0.1
 
 wn = turtle.Screen()
 wn.title("Snake Game")
@@ -25,10 +25,14 @@ def move():
         head.sety(y + 20)
 
 
+
+
 #Main game loop
 while True:
     wn.update()
 
     move()
+
+    time.sleep(delay)
 
 wn.mainloop()
