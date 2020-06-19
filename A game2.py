@@ -15,6 +15,12 @@ head.penup()
 head.goto(0,0)
 head.direction = "stop"
 
+#Functions
+def move():
+
+
+
+
 #Main game loop
 while True:
     wn.update()
