@@ -12,7 +12,7 @@ wn.tracer(0) # turns off the screen updates
 
 #Snake Head
 head = turtle.Turtle()
-head.speed(0) #animation speed of the turtle module
+head.speed(100) #animation speed of the turtle module
 head.shape("square")
 head.color("black")
 head.penup()
@@ -28,6 +28,7 @@ food.color("red")
 food.penup()
 food.goto(0,100)
 
+segments = []
 
 #Functions
 def go_left():
@@ -73,6 +74,26 @@ while True:
         x = random.randint(-290, 290)
         y = random.randint(-290, 290)
         food.goto(x, y)
+
+        new_segment = turtle.Turtle()
+        new_segment.speed(100)
+        new_segment.penup()
+        new_segment.color("orange")
+        new_segment.shape("square")
+        segments.append(new_segment)
+
+    #Move the end segemnts in reverse order
+    for index in range(len(segments)-1, 0, -1):
+        x = segments[index - 1].xcor()
+        y = segments[index - 1].ycor()
+        segments[index].goto(x, y)
+
+        if len(segments) > 0:
+            x = head.xcor()
+            y = head.ycor()
+            segments[0].goto(x, y)
+
+        
     move()
 
     time.sleep(delay)
